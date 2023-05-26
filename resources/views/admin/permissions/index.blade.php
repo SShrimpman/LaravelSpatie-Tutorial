@@ -4,14 +4,16 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-2">
                 <div class="flex justify-end p-2">
-                    <a href="{{ route('admin.permissions.create') }}" class="px-4 py-2 bg-green-700 hover:bg-green-500 rounded-md">Create Permission</a>
+                    <a href="{{ route('admin.permissions.create') }}" class="px-4 py-2 bg-green-700 hover:bg-green-500 text-slate-100 rounded-md">Create Permission</a>
                 </div>
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
-                                    Name
+                                    <div class="flex justify-center">
+                                        Name
+                                    </div>
                                 </th>
                                 {{-- <th scope="col" class="px-6 py-3">
                                     Title
@@ -23,22 +25,28 @@
                                     Role
                                 </th> --}}
                                 <th scope="col" class="px-6 py-3">
-                                    Actions
+                                    <div class="flex justify-center">
+                                        Actions
+                                    </div>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($permissions as $permission)
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                    <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                    <th scope="row" class="flex justify-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                                         {{-- <img class="w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Jese image"> --}}
                                         <div class="pl-3">
                                             <div class="text-base font-semibold">{{ $permission->name }}</div>
                                         </div>  
                                     </th>
                                     <td class="px-6 py-4">
-                                        <a href="">Edit</a>
-                                        <a href="">Delete</a>
+                                        <div class="flex justify-center">
+                                            <div class="space-x-1">
+                                                <a href="{{ route('admin.permissions.edit', $permission->id) }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md">Edit</a>
+                                                {{-- <a href="{{ route('admin.permissions.delete', $permission->id) }}" class="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded-md">Delete</a> --}}
+                                            </div>
+                                        </div>
                                     </td>
                                     {{-- <td class="px-6 py-4">
                                         React Developer
