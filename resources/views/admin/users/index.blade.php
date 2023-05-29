@@ -46,8 +46,7 @@
                                     <td class="px-6 py-4">
                                         <div class="flex justify-center">
                                             <div class="flex space-x-1">
-                                                <a href="" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md">Roles</a>
-                                                <a href="" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md">Permissions</a>
+                                                <a href="{{ route('admin.users.show', $user->id) }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md">Show</a>
                                                 <form class="cursor-pointer px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded-md" method="POST"
                                                  action="{{ route('admin.users.destroy', $user->id) }}"
                                                  onsubmit="return confirm('Are you sure you want to delete this role?');">
